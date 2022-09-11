@@ -11,6 +11,7 @@ public class Health : MonoBehaviour, IDataUi
     [SerializeField]
     private IntSO currentHealth;
     private float hitDelay;
+    private Vector3 startVector;
     private CharacterController characterController;
     [SerializeField]
     public bool isSafe;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour, IDataUi
     }
     private void Awake() {
         currentHealth.Value = maxHealth;
+        startVector = this.transform.position;
         characterController = GetComponent<CharacterController>();
     }
 
@@ -34,7 +36,7 @@ public class Health : MonoBehaviour, IDataUi
         currentHealth.Value -= 1;
         OnChangeValue?.Invoke();
         characterController.enabled = false;
-        this.gameObject.transform.position = new Vector3(-1.5f, 0f, -2.6f);
+        this.gameObject.transform.position = startVector;
         this.gameObject.transform.rotation = Quaternion.Euler(0, 90f, 0);
         characterController.enabled = true;
         if (currentHealth.Value <= 0) {

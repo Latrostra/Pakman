@@ -18,23 +18,23 @@ public class MenuManager : MonoBehaviour
         switch (levelSetupSO.MenuType)
         {
         case MenuType.Win:
-            header.GetComponent<TextMeshProUGUI>().text = "WYGRANKO";
+            header.GetComponent<TextMeshProUGUI>().text = TextResources.WinText;
             play.SetActive(true);
             restart.SetActive(false);
             break;
 
         case MenuType.Lose:
-            header.GetComponent<TextMeshProUGUI>().text = ":(";
+            header.GetComponent<TextMeshProUGUI>().text = TextResources.LoseText;
             play.SetActive(false);
             restart.SetActive(true);
             break;
         case MenuType.End:
-            header.GetComponent<TextMeshProUGUI>().text = "KONIEC :)";
+            header.GetComponent<TextMeshProUGUI>().text = TextResources.EndText;
             play.SetActive(false);
             restart.SetActive(true);
             break;
         case MenuType.Start:
-            header.GetComponent<TextMeshProUGUI>().text = "ZACZYNAMY????";
+            header.GetComponent<TextMeshProUGUI>().text = TextResources.StartText;
             play.SetActive(true);
             restart.SetActive(false);
             break;
