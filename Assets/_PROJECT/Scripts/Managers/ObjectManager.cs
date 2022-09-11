@@ -31,6 +31,9 @@ public class ObjectManager : MonoBehaviour
             var vec = new Vector3(hit.position.x, hit.position.y + prefab.transform.position.y, hit.position.z);
             var obj = Instantiate(prefab, vec, Quaternion.identity);
             obj.transform.parent = this.transform;
+            if (!isSeed) {
+                obj.GetComponent<NavMeshAgent>().speed = levelSetupSO.LevelSettingSO.MonstersSpeed;
+            }
             objects.Add(obj);
         }
         yield return null;

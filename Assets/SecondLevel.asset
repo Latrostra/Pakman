@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonstersCount: 10
   PelletsCount: 20
-  MonstersSpeed: 6
+  MonstersSpeed: 4

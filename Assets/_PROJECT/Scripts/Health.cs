@@ -12,6 +12,8 @@ public class Health : MonoBehaviour, IDataUi
     private IntSO currentHealth;
     private float hitDelay;
     private CharacterController characterController;
+    [SerializeField]
+    public bool isSafe;
     public Action OnChangeValue { get; set;}
 
     private void Update() {

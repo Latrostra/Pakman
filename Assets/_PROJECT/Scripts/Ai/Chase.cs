@@ -15,7 +15,10 @@ public class Chase : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       nmc.SetDestination(player.transform.position);
+        if (player.GetComponent<Health>().isSafe) {
+            animator.SetBool("IsSafe", true);
+        }
+        nmc.SetDestination(player.transform.position);
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

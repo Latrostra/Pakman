@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0208217ba29a9874aba1dd6feeee1c59, type: 3}
   m_Name: FirstLevel
   m_EditorClassIdentifier: 
-  MonstersCount: 4
-  PelletsCount: 5
-  MonstersSpeed: 5
+  MonstersCount: 5
+  PelletsCount: 10
+  MonstersSpeed: 3
