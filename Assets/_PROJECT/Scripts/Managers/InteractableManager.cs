@@ -8,7 +8,7 @@ public class InteractableManager : MonoBehaviour, IDataUi
     public Action OnChangeValue { get; set;}
     private ObjectManager objectManager;
     public IntSO pellets;
-    private void Start() {
+    private void Awake() {
         objectManager = this.GetComponent<ObjectManager>();
         pellets.Value = objectManager.objects.Count;
     }

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: LevelSetup
   m_EditorClassIdentifier: 
   MenuType: 3
+  ActualLevel: 0
+  LevelSettingSO: {fileID: 11400000, guid: 312c8b8a480c32045a4c0fcd531c183e, type: 2}
