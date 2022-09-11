@@ -6,5 +6,6 @@ using UnityEngine;
 public class LevelSetupSO : ScriptableObject
 {
     public MenuType MenuType;
-    public LevelSettingSO levelSettingSO;
+    public int ActualLevel;
+    public LevelSettingSO LevelSettingSO;
 }

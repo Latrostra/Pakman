@@ -1264,6 +1264,18 @@ PrefabInstance:
       propertyPath: levelSetup
       value: 
       objectReference: {fileID: 11400000, guid: 28ce3662e49335447b4d7147d0d8455d, type: 2}
+    - target: {fileID: 6650456694639599881, guid: 0aac6b2e9accd814bb39fcfa47c89e5d, type: 3}
+      propertyPath: levelSettingSO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650456694639599881, guid: 0aac6b2e9accd814bb39fcfa47c89e5d, type: 3}
+      propertyPath: levelSettingSO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 312c8b8a480c32045a4c0fcd531c183e, type: 2}
+    - target: {fileID: 6650456694639599881, guid: 0aac6b2e9accd814bb39fcfa47c89e5d, type: 3}
+      propertyPath: levelSettingSO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 60172a45cf66dcb4c9955e29fb410275, type: 2}
     - target: {fileID: 6650456694639599894, guid: 0aac6b2e9accd814bb39fcfa47c89e5d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2665,7 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3309af0de13ab458e33bf33ca3d738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   currentHealth: {fileID: 11400000, guid: b0561fb6a0f341e4c9c0826c477d84b0, type: 2}
 --- !u!65 &1950005831
 BoxCollider:

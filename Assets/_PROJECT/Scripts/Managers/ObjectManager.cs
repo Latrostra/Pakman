@@ -12,10 +12,14 @@ public class ObjectManager : MonoBehaviour
     private GameObject planeGround;
     [SerializeField]
     private int objectCount;
+    [SerializeField]
+    private bool isSeed;
     private RandomPosition randomPosition;
     public List<GameObject> objects = new List<GameObject>();
-
+    public LevelSetupSO levelSetupSO;
+    
     private void Awake() {
+        objectCount = isSeed ? levelSetupSO.LevelSettingSO.PelletsCount : levelSetupSO.LevelSettingSO.MonstersCount; 
         randomPosition = new RandomPosition(new List<Vector3>(planeGround.GetComponent<MeshFilter>().sharedMesh.vertices), planeGround);
         StartCoroutine("Spawn");
     }

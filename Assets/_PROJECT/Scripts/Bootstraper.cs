@@ -23,6 +23,14 @@ public class Bootstraper : MonoBehaviour
 
     public void WinScene(int id) {
         levelSetup.MenuType = MenuType.Win;
+        levelSetup.ActualLevel += 1;
+        if (levelSetup.ActualLevel < levelSettingSO.Count) {
+            levelSetup.LevelSettingSO = levelSettingSO[levelSetup.ActualLevel];
+        }
+        else {
+            levelSetup.MenuType = MenuType.End;
+            levelSetup.LevelSettingSO = levelSettingSO[0];
+        }
         LoadScene(id);
     }
 
@@ -56,10 +64,14 @@ public class Bootstraper : MonoBehaviour
     public void OnPlayModeExit(PlayModeStateChange playModeStateChange) {
         if (PlayModeStateChange.ExitingEditMode == playModeStateChange) {
             levelSetup.MenuType = MenuType.Start;
+            levelSetup.LevelSettingSO = levelSettingSO[0];
+            levelSetup.ActualLevel = 0;
         }
     }
 
     void OnApplicationQuit() {
         levelSetup.MenuType = MenuType.Start;
+        levelSetup.LevelSettingSO = levelSettingSO[0];
+        levelSetup.ActualLevel = 0;
     }
 }
