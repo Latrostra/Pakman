@@ -15,7 +15,6 @@ public class Door : MonoBehaviour
         {
             if (collision.gameObject.tag == (isEnemy ? "Enemy" : "Player"))
             {
-                Debug.Log(isEnemy);
                 var coroutine = MoveDoor(new Vector3(this.transform.GetChild(0).position.x, 7f, this.transform.GetChild(0).position.z));
                 StartCoroutine(coroutine);
             }
@@ -40,7 +39,6 @@ public class Door : MonoBehaviour
         {
             this.transform.GetChild(0).position = Vector3.Lerp(this.transform.GetChild(0).position, destination, (elapsedTime / waitTime));
             elapsedTime += Time.deltaTime;
-            Debug.Log("lol");
             yield return null;
         }
         this.transform.GetChild(0).position = destination;

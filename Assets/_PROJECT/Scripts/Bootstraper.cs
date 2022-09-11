@@ -16,7 +16,10 @@ public class Bootstraper : MonoBehaviour
 
     private void Awake() {
         Instance = this;
+        #if UNITY_EDITOR
         EditorApplication.playModeStateChanged += OnPlayModeExit;
+        #endif
+        
         Cursor.visible = sceneSO.CursorVisible;
         Cursor.lockState = sceneSO.CursorLockState ? CursorLockMode.Locked : CursorLockMode.None;
     }
@@ -45,7 +48,10 @@ public class Bootstraper : MonoBehaviour
     }
 
     private void OnDestroy() {
-        EditorApplication.playModeStateChanged -= OnPlayModeExit;
+        #if UNITY_EDITOR
+            EditorApplication.playModeStateChanged -= OnPlayModeExit;
+        #endif
+        
     }
 
     public void ExitGame() {
@@ -60,15 +66,16 @@ public class Bootstraper : MonoBehaviour
             yield return null;
         }
     }
-
-    public void OnPlayModeExit(PlayModeStateChange playModeStateChange) {
-        if (PlayModeStateChange.ExitingEditMode == playModeStateChange) {
-            levelSetup.MenuType = MenuType.Start;
-            levelSetup.LevelSettingSO = levelSettingSO[0];
-            levelSetup.ActualLevel = 0;
+    #if UNITY_EDITOR
+        public void OnPlayModeExit(PlayModeStateChange playModeStateChange) {
+            if (PlayModeStateChange.ExitingEditMode == playModeStateChange) {
+                levelSetup.MenuType = MenuType.Start;
+                levelSetup.LevelSettingSO = levelSettingSO[0];
+                levelSetup.ActualLevel = 0;
+            }
         }
-    }
-
+    #endif
+    
     void OnApplicationQuit() {
         levelSetup.MenuType = MenuType.Start;
         levelSetup.LevelSettingSO = levelSettingSO[0];
